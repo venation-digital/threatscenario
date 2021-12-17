@@ -1,0 +1,155 @@
+<!---
+TEMPLATE VERSION: V0.12
+LICENSE VERSION: INVESTIGATION IN PROGRESS
+-->
+
+# Sophisticated adversary targeting air-gapped systems through compromised USB drives
+
+## Overview 
+---
+
+
+**Identifier:** 202112-SKIPTHEGAP
+
+**Timestamp:** 2021-12-03
+
+**Author(s):** [Venation](https://venation.digital/)
+
+**Industry Tagging:**
+[Manufacturing](STIX)
+[Energy](STIX)
+
+
+**Scenario Tagging:**
+'Air-gap'
+'DarkHotel'
+'Sednit'
+'Tropic Trooper'
+'Equation Group'
+'Goblin Panda'
+'Mustang Panda'
+
+<!---
+EDITORIAL COMMENT :
+[17-DEC-21] Tagging is still under construction - especially how to link into JSON.
+-->
+
+<!---
+Tags for each scenario are listed here, used by the back-end to correlate and analyse scenario's. For example to determine trending scenarios per run.
+Tagging should consist of key activities in each scenario, e.g. 'exploit vulnerability' or 'ransomware'
+-->
+
+
+## Scenario breakdown
+---
+
+**Objective(s):**
+
+The objective of this scenario is to gain access to an air-gapped network
+
+<!---
+Detailing the most-likely objective(s) of the scenario. Should there be more than one objective, items shall be listed through numbering and ordered from most-likely to least likely. 
+-->
+
+**Summary:**
+
+This scenario details how malware, or malware frameworks, implements an offline, covert communication mechanism between an air-gapped system and an attacker that is bi-directional. Specifically, it emphasises automated execution: getting malicious code executed just by connecting a malicious USB drive into a computer to compromise an air-gapped system.
+
+All frameworks devised unique ways to reach the target air-gapped network and execute malware on a first system. They all have one thing in common, though: they all used weaponized USB drives. The main difference between connected and offline frameworks is how the drive is weaponized in the first place. Connected frameworks usually deploy a component on the connected system that will monitor the insertion of new USB drives and automatically place the malicious component needed to compromise the air-gapped system.
+
+<!---
+The summary describes the why, how, what for each scenario. The text shall be 3 paragraphs, aligned with the why-how-what, and should consist of 2 rows of text per paragraph. Rows of text written shall follow BLUF writing and active voice.
+-->
+
+**Functions and/or systems targeted:**
+
+All known malware frameworks included in this scenario focus on Microsoft Windows systems.
+
+<!---
+If specific functions or systems are targeted, they are broken down here.
+-->
+
+**Scenario sequence:**
+
+1. **Initial compromise**: An attacker targets users through one of the following: phishing with malicious attachment, human asset installation or watering hole attacks. Gaining access to an internet-connected system that is connected alongside the air-gapped network. Using the Establishing a persistent shell on a system that connects to the C&C server. Spearphishing using malicious attachments.
+2. **Weaponize USB drives**: Once compromised, that system is used to weaponize USB drives with a malicious payload and
+some mechanism to compromise the next target: the air-gapped system. Should the scenario be executed from a **assume breach** perspective, then the scenario initiates here.
+3. **Compromise air-gapped system**: Air-gapped system is compromised through usb drive injection. There are no known special techniques designed for persistence in air-gapped machines. Once the malware is launched through its execution vector, it only depends on the capabilities of the malware that enable it to access powerful persistence methods. But from our research we can see that most of the frameworks just employ persistence based in the Windows registry to get executed at system startup or loaded when a process is created via hijacking. The malware is designed to install and persist in new systems and continue collecting data for later exfiltration. Some of these frameworks present the capabilities to receive commands via covert communication channels and install or execute new components in the compromised system beyond existing execution vectors in already compromised USB drives. 
+4. **Reconnaissance and information stealing**: The payload running on the air-gapped system usually comes with reconnaissance and information stealing capabilities. As we discussed earlier, attackers usually do not have direct control over which specific air-gapped system will become compromised, as this largely depends on which system an unsuspecting user will connect the malicious USB drive to. To address this, the following reconnaissance activities are performed 'Host-specific information gathering related to the system itself', 'Active network reconnaissance/probing', 'Espionage activity', 'Propagation to other hosts on the air-gapped side', 'USB drive-based propagation', 'Network-based propagation'.
+5. **Copy stolen information to USB**: The output from the reconnaissance and information stealing capability is stored back onto the USB drive
+6. **Extract exfiltrated data**: When the USB drive reaches the compromised connected system, its contents are extracted locally.
+7. **Exfiltration**: The data on the compromised system is exfiltrated to the attacker's C&C server via the internet. 
+8. **Send further commands**: Some frameworks go one step further and support a two-way communication protocol: through a compromised system in the connected side, the attacker sends commands to the malware placed on the air-gapped network; this is done via a covert communication channel often placed on a USB drive.
+9. **Store commands to USB**: Connected system stores the received commands onto the USB drive.
+10. **Read commands and execute**: Once the USB drive is connected to the air-gapped system, specific commands execution occurs.
+11. **Copy command results to USB**: The results and output of the commands are stored on the USB drive plugged into the air-gapped system.
+12. **Extract results from USB**: Once the USB is plugged into the connected system, the results are extracted onto the system.
+13. **Exfiltration**: The connection system exfiltrates the sensitive data to the C&C server.
+
+
+<!---
+Providing a listed sequencing of events, describing how it happens, what we know and what we don't know.
+-->
+
+## Adversary playbook
+---
+
+**Considerations:**
+* This scenario does not focus on offline frameworks: the so-called 'offline frameworks' do not involve internet-connected systems at all. These cases the presence of an operator or collaborator on the ground is required to perform the actions usually done by the connected part of the malware. For example, preparing the initial malicious USB drive responsible for the execution on the air-gapped side, executing the malware on the air-gapped system , extracting the exfiltrated data from the drive and sending additional commands to the air-gapped side.
+* This scenario does not make use of LNK-related vulnerabilities. Malicious LNK files are usually used as the exploit to trigger a vulnerability in old components of Windows, such as the Windows Shell, that allow the malware to get remote code execution with no user action required other than viewing the LNK file in Windows Explorer.
+* This scenario does not focus on non-automated execution activities. In these scenarios, the execution of the malicious code depends on tricking an unsuspecting legitimate user into executing the malicious code.
+* The scenario does not consider non-persistent techniques for compromise of the air-gapped system, for example those designed for in-memory reconnaissance; collects information that is staged on the USB drive for exfiltration.
+
+
+
+**Associated threat actor profile:**
+
+| Name    | Category      | Capability  | Intent | Comments |
+| --------|-------------| -----| -----| --- |
+| DarkHotel | State-sponsored entity | High | High | 'Retro' campaign in 2017-2019, 'Ramsay' campaign in 2019-2020. |
+| Sednit | State-sponsored entity | High | High | 'USBStealer' campaign in 2005-2015. |
+| Tropic Trooper | State-sponsored entity | High | High | 'USBFerry' campaign in 2014-2020. |
+| Equation Group | State-sponsored entity | High | High | 'Fanny' campaign in 2008-2012. |
+| Goblin Panda | State-sponsored entity | High | High | 'USBCulprit' campaign in 2014-2019. |
+| Mustang Panda | State-sponsored entity | High | High | 'PlugX' campaign in 2018-2020. |
+
+
+**TTP breakdown:**
+
+| Tactic_ID | Tactic_ID | Technique_ID | Technique | Procedure(s) | Detection Opportunity | Comments 
+| --------|-------------| -----|-----| -----|-----|-----|
+| TA0043 | Reconnaissance | T1589 | Gather Victim Identity Information  | Acquired names and email addresses of potential targets for malware or additional phishing operations. | Detection efforts may be focused on related stages of the adversary lifecycle, such as during Initial Access. | NA | 
+| TA0001 | Initial Access  | T1566.001 | Phishing: Spearphishing Attachment | Add malicious office document to email. | [application log content](https://attack.mitre.org/datasources/DS0015/#Application%20Log%20Content) <br> [file creation](https://attack.mitre.org/datasources/DS0022/#File%20Creation) <br> [network traffic content](https://attack.mitre.org/datasources/DS0029/#Network%20Traffic%20Content) <br> [network traffic flow](https://attack.mitre.org/datasources/DS0029/#Network%20Traffic%20Flow)  | NA | 
+| TA0001 | Initial Access  | T1189 | Drive-by Compromise | Use watering hole attack to gain initial access to victims within a specific IP range. | [application log content](https://attack.mitre.org/datasources/DS0015/#Application%20Log%20Content) <br> [file creation](https://attack.mitre.org/datasources/DS0022/#File%20Creation) <br> [network traffic content](https://attack.mitre.org/datasources/DS0029/#Network%20Traffic%20Content) <br> [network connection creation](https://attack.mitre.org/datasources/DS0029/#Network%20Connection%20Creation) <br> [process creation](https://attack.mitre.org/datasources/DS0009/#Process%20Creation) | NA | 
+| TA0008 | Lateral Movement | T1550.001 | Use Alternate Authentication Material: Application Access Token  | Use several malicious applications that abused OAuth access tokens to gain access to target email accounts. | Detection_tagging | NA | 
+
+<!---
+Based on the listed scenario sequence, describing what actually happened or is forecasted to happen in the event.
+More details on tactic & technique referencing, please visit: [https://attack.mitre.org/](https://attack.mitre.org/)
+-->
+
+## Other
+---
+
+**Wrap-up:**
+
+Any_relevant_input_is_detailed_here
+
+**Sources:**
+
+* https://www.eset.com/int/about/newsroom/press-releases/research/eset-research-analyzes-malicious-frameworks-targeting-air-gapped-networks-dissects-15-years-of-nati/
+
+<!---
+List all relevant and available OPEN-SOURCE source references.
+-->
+
+
+**JSON:**
+
+```{toggle}
+{
+  "firstName": "John",
+  "lastName": "Smith",
+  "age": 25
+}
+```
