@@ -1,5 +1,12 @@
 # Venation Digital 
 
-This repository is the official source of Venation's threat scenario service.
+Hi there! 
 
-More details coming soon.
+This is the community repository of Venation's threat scenario service.
+
+In this directory you can find all relevant content to get started with creating your own scenario's. 
+
+We will continue to keep adding content to this directory, so stay tuned for new updates.
+
+
+Cheers!
