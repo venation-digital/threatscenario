@@ -147,9 +147,5 @@ List all relevant and available OPEN-SOURCE source references.
 **JSON:**
 
 ```{toggle}
-{
-  "firstName": "John",
-  "lastName": "Smith",
-  "age": 25
-}
+NA
 ```
