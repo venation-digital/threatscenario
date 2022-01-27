@@ -1,3 +1,9 @@
+<!---
+VERSION: 0.12
+AUTHOR: Venation, Gert-Jan Bruggink
+RIGHTS reserved:
+-->
+
 # Title, detailing what happens in this scenario, by whom, and directed by what objective
 
 ## Overview 
@@ -23,8 +29,9 @@
 'Application access token'
 
 <!---
-Tags for each scenario are listed here, used by the back-end to correlate and analyse scenario's. For example to determine trending scenarios per run.
-Tagging should consist of key activities in each scenario, e.g. 'exploit vulnerability' or 'ransomware'
+Tags for each scenario are listed here, used by the back-end to correlate and analyse scenario's. For example to determine trending scenarios per run. Tagging should consist of key activities in each scenario, e.g. 'exploit vulnerability' or 'ransomware'
+
+2022-01-27: This isunder construction and current research emphasises finding the right annotation mechanism to make other aspects more efficient. For example, when exporting the scenarion into a JSON file.
 -->
 
 
