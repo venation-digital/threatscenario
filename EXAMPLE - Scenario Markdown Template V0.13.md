@@ -1,5 +1,5 @@
 <!---
-VERSION: 0.12
+VERSION: 0.13
 AUTHOR: Venation, Gert-Jan Bruggink
 RIGHTS reserved:
 -->
@@ -8,36 +8,34 @@ RIGHTS reserved:
 
 ## Overview 
 ---
-
 **Identifier:** YEARMONTH-NAME (e.g. 202110-SCENARIO_HAPPENS_ABC)
 
-**Timestamp:** YEAR-MONTH-DAY - time (e.g. 2021-11-11, 10:00)
+**Created:** {{date}} {{time}}
+
+**Latest update:** YEAR-MONTH-DAY (e.g. 2021-11-11, 10:00)
+
+**Status:** #Status/Open
 
 **Author(s):** [Venation](https://venation.digital/)
 
-**Industry Tagging:**
-[STIX:1](Financial Services)
-'Customer banking'
-'Maritime'
-'High Tech'
-'Semiconductors'
-
-**Scenario Tagging:**
-'APT28'
-'Mobile malware'
-'Watering hole'
-'Application access token'
-
-<!---
-Tags for each scenario are listed here, used by the back-end to correlate and analyse scenario's. For example to determine trending scenarios per run. Tagging should consist of key activities in each scenario, e.g. 'exploit vulnerability' or 'ransomware'
-
-2022-01-27: This isunder construction and current research emphasises finding the right annotation mechanism to make other aspects more efficient. For example, when exporting the scenarion into a JSON file.
--->
-
+<br>
 
 
 ## Scenario breakdown
 ---
+**Scenario Tagging:**
+#Scenario/Example
+
+<!---
+Tag all items that would be relevant for the scenario on a high level. Usecase is sorting and structuring content.
+-->
+
+**Research Tagging:**
+#Tagging/Example
+
+<!---
+Tag all items that would be relevant for the scenario on a low level. Usecase is performing deeper research between different scenarios.
+-->
 
 **Objective(s):**
 
@@ -54,6 +52,10 @@ Any_relevant_input_is_detailed_here
 <!---
 The summary describes the why, how, what for each scenario. The text shall be 3 paragraphs, aligned with the why-how-what, and should consist of 2 rows of text per paragraph. Rows of text written shall follow BLUF writing and active voice.
 -->
+
+**Industry Tagging:**
+#Industry/Example
+
 
 **Functions and/or systems targeted:**
 
@@ -73,19 +75,22 @@ If specific functions or systems are targeted, they are broken down here.
 Providing a listed sequencing of events, describing how it happens, what we know and what we don't know.
 -->
 
-## Adversary playbook
----
-
 **Considerations:**
 
 Any_relevant_input_is_detailed_here
 
+<!---
+Annotate all relevant considerations for this particular scenario.
+-->
 
+
+## Adversary playbook
+---
 **Associated threat actor profile:**
 
-| Name    | Category      | Capability  | Intent | Comments |
-| --------|-------------| -----| -----| --- |
-| APT28 | State-sponsored entity | High | High | TBD |
+| Name    | Tag | Category | Capability  | Intent | Comments |
+| --------| --- |-------------| -----| -----| --- |
+| APT28 | #Actor/Example | State-sponsored entity | High | High | TBD |
 
 
 **TTP breakdown:**
@@ -103,7 +108,6 @@ More details on tactic & technique referencing, please visit: [https://attack.mi
 
 ## Other
 ---
-
 **Wrap-up:**
 
 Any_relevant_input_is_detailed_here
