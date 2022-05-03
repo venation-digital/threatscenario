@@ -22,6 +22,3 @@ We will continue to keep adding content to this directory, so stay tuned for new
 
 Are you interested in this type of content, but don't want to do the work yourself? 
 We have a commercial service containing a large repository of prepared threat scenarios. Contact us at info at venation.digital for more info!
-
-
-Cheers!
