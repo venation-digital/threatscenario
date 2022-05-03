@@ -1,5 +1,5 @@
 <!---
-VERSION: 0.13
+VERSION: 0.14
 AUTHOR: Venation, Gert-Jan Bruggink
 RIGHTS reserved:
 -->
@@ -18,24 +18,32 @@ RIGHTS reserved:
 
 **Author(s):** [Venation](https://venation.digital/)
 
-<br>
-
-
-## Scenario breakdown
----
-**Scenario Tagging:**
-#Scenario/Example
+**Category:**
+#Category/Example
 
 <!---
 Tag all items that would be relevant for the scenario on a high level. Usecase is sorting and structuring content.
 -->
 
-**Research Tagging:**
-#Tagging/Example
+**Tags:**
+#Tags/Example
 
 <!---
 Tag all items that would be relevant for the scenario on a low level. Usecase is performing deeper research between different scenarios.
 -->
+
+**Priority Intelligence Requirement(s):**
+<!---
+Describe any relevant (priority) intelligence requirements that link to this scenario.
+
+Preferably standardise on Intel471's 'General Intelligence Requirements Handbook'.
+-->
+
+<br>
+
+
+## Scenario breakdown
+---
 
 **Objective(s):**
 
