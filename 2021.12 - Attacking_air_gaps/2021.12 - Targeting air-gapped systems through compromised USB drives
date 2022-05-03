@@ -11,16 +11,20 @@
 
 **Author(s):** [Venation](https://venation.digital/)
 
-<br>
+**Category:**
+#Category/Malware/Air-gap/Air-gapTargeting
+
+**Tags:**
+#Tags/Malware/Air-gap
+#Tags/Malware/USB 
+
+**Priority Intelligence Requirement(s):**
+Identify characteristics of existing, new and emerging malware campaigns specifically targeting air-gapped infrastructure.
+
 
 ## Scenario breakdown
 ---
-**Scenario Tagging:**
-#Scenario/Malware/Air-gap/Air-gapTargeting
 
-**Research Tagging:**
-#Tagging/Malware/Air-gap
-#Tagging/Malware/USB
 
 **Objective(s):**
 
@@ -97,7 +101,7 @@ All known malware frameworks included in this scenario focus on Microsoft Window
 
 **Wrap-up:**
 
-Any_relevant_input_is_detailed_here
+Nothing significant to note.
 
 **Sources:**
 
@@ -108,8 +112,6 @@ Any_relevant_input_is_detailed_here
 
 ```{toggle}
 {
-  "firstName": "John",
-  "lastName": "Smith",
-  "age": 25
+  No contents for this scenario.
 }
 ```
