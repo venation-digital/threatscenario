@@ -1,5 +1,5 @@
 <!---
-VERSION: 0.14
+VERSION: 0.15
 AUTHOR: Venation, Gert-Jan Bruggink
 RIGHTS reserved:
 -->
@@ -12,7 +12,7 @@ RIGHTS reserved:
 
 **Created:** {{date}} {{time}}
 
-**Latest update:** YEAR-MONTH-DAY (e.g. 2021-11-11, 10:00)
+**Modified:** YEAR-MONTH-DAY (e.g. 2021-11-11, 10:00)
 
 **Status:** #Status/Open
 
@@ -73,14 +73,14 @@ Any_relevant_input_is_detailed_here
 If specific functions or systems are targeted, they are broken down here.
 -->
 
-**Scenario sequence:**
+**Scenario walkthrough:**
 
-1. Step - Reconnaissance
-2. Step - Initial access
-3. Step - Lateral movement
+* Step - Reconnaissance
+* Step - Initial access
+* Step - Lateral movement
 
 <!---
-Providing a listed sequencing of events, describing how it happens, what we know and what we don't know.
+Providing a listed walkthrough of events, describing how it happens, what we know and what we don't know. Important to note, this is not a sequence. A sequence would imply that all events happen lineair, while in reality we know that this is never the case.
 -->
 
 **Considerations:**
@@ -103,7 +103,7 @@ Annotate all relevant considerations for this particular scenario.
 
 **TTP breakdown:**
 
-| Tactic_ID | Tactic_ID | Technique_ID | Technique | Procedure(s) | Detection Opportunity | Comments 
+| Tactic_ID | Tactic | Technique_ID | Technique | Procedure(s) | Detection Opportunity | Comments 
 | --------|-------------| -----|-----| -----|-----|-----|
 | TA0043 | Reconnaissance | T1589 | Gather Victim Identity Information  | Acquired mobile phone numbers of potential targets, possibly for mobile malware or additional phishing operations. | Detection_tagging | TBD | 
 | TA0001 | Initial Access  | T1189 | Drive-by Compromise | Use watering hole attack to gain initial access to victims within a specific IP range. | Detection_tagging | TBD | 
