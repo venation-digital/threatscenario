@@ -1,6 +1,7 @@
 # Targeting air-gapped systems through compromised USB drives 
 
 ## Overview 
+
 ---
 
 **Identifier:** 202112-SKIPTHEGAP 
@@ -15,10 +16,12 @@
 
 
 **Category:**
+
 #Category/PhysicalAttack/USBDropAttack/202112-SKIPTHEGAP
 
 
 **Tags:** 
+
 #Tags/PhysicalAttack/USBDropAttack
 #Tags/ThreatActor/Nation-StateActors
 #Tags/ThreatActor/OrganisedCybercriminalGroups
@@ -28,9 +31,11 @@
 
 
 **Priority Intelligence Requirement(s):**
+
 * Identify characteristics of existing, new, and emerging malware campaigns specifically targeting air-gapped infrastructure. 
 
 **Scope**
+
 * This scenario focuses on attacks that target air-gapped infrastructure via the use of weaponised USB drives. 
 * Specifically, this scenario covers automated execution; getting malicious code executed just by connecting an infected USB drive into a computer to compromise an air-gapped system.  
 * This scenario focuses only on connected frameworks, not on offline frameworks. 
@@ -44,12 +49,14 @@
 ---
 
 **Objective(s):**
+
 The objective of this attack is to gain access to an air-gapped network using weaponised USB drives in order to exfiltrate sensitive data from an organisation. 
 
 This scenario demonstrates the most likely attack sequence an attacker takes when compromising an air-gapped network based on a review and analysis of industry reporting in 2021-22. 
 
 
 **Summary:**
+
 Data from the 2021 Honeywell Industrial USB Threat Report indicates the volume of threats specifically designed to utilise removable media almost doubled in 2021 compared to 2020. [^2] This scenario details how malware or malware frameworks implement an offline, covert, and bi-directional communication mechanism between an air-gapped system and an attacker.
  
 All malware frameworks relevant to this scenario devised unique ways to reach the target air-gapped network and execute malware on a first system. However, they all have one thing in common: they all used weaponised USB drives. The main difference between connected and offline frameworks is how the drive is weaponised. Connected frameworks usually deploy a component on the connected system that will monitor the insertion of new USB drives and automatically place the malicious component needed to compromise the air-gapped system. 
@@ -58,6 +65,7 @@ Offline frameworks do not involve internet-connected systems at all. In these ca
 
 
 **Industry Tagging:**
+
 #Industry/Manufacturing 
 #Industry/Energy 
 #Industry/Government
@@ -66,6 +74,7 @@ Offline frameworks do not involve internet-connected systems at all. In these ca
 
 
 **Functions and/or systems targeted:**
+
 #Solution/System/Microsoft/Windows
 
 **Scenario walkthrough:** 
@@ -84,6 +93,7 @@ Offline frameworks do not involve internet-connected systems at all. In these ca
 
 
 **Considerations:**
+
 * In this scenario we did not note specific vulnerabilities being used. Regardless, we did note several instances of LNK-related vulnerabilities being leveraged. Malicious LNK files are usually used as the exploit to trigger a vulnerability in old components of Windows, such as the Windows Shell, that allow the malware to get remote code execution with no user action required other than viewing the LNK file in Windows Explorer. 
 
 ## Adversary playbook
